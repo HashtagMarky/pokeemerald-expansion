@@ -87,6 +87,9 @@
 #define DEOXYS_ROCK_COMPLETE   3
 
 // Flying Taxi
-#define LAST_TALKED_TO_FLYING_TAXI 255 // used for determining if Fly or a flying taxi was used
+#define FLYING_TAXI_UNAVAILABLE         0       // Disallows the use of Flying Taxi Services
+#define FLYING_TAXI_FIRST_USE           1       // First time use and explaination Flying Taxi Services
+#define FLYING_TAXI_AVAILABLE           2       // Allows use of Flying Taxi Services
+#define FLYING_TAXI_IN_USE              3       // Determines if Flying Taxi Services are currently in use
 
 #endif // GUARD_CONSTANTS_FIELD_SPECIALS_H

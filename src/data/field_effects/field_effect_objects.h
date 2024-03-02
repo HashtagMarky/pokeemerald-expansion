@@ -1072,6 +1072,31 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Bird = {
     .callback = SpriteCallbackDummy,
 };
 
+static const struct SpriteFrameImage sPicTable_FlyingTaxi[] = {
+    obj_frame_tiles(gFieldEffectObjectPic_FlyingTaxi),
+};
+
+static const union AnimCmd sAnim_FlyingTaxi[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_FlyingTaxi[] =
+{
+    sAnim_FlyingTaxi,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_FlyingTaxi = {
+    .tileTag = TAG_NONE,
+    .paletteTag = TAG_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .anims = sAnimTable_FlyingTaxi,
+    .images = sPicTable_FlyingTaxi,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
 static const struct SpriteFrameImage sPicTable_ShortGrass[] = {
     overworld_frame(gFieldEffectObjectPic_ShortGrass, 2, 2, 0),
     overworld_frame(gFieldEffectObjectPic_ShortGrass, 2, 2, 1),

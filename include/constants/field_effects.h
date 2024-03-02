@@ -71,7 +71,6 @@
 #define FLDEFF_USE_VS_SEEKER             67
 #define FLDEFF_X_ICON                    68
 #define FLDEFF_DOUBLE_EXCL_MARK_ICON     69
-#define FLDEFF_RIDE_TAXI                 70
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -110,6 +109,7 @@
 #define FLDEFFOBJ_BUBBLES               34
 #define FLDEFFOBJ_SMALL_SPARKLE         35
 #define FLDEFFOBJ_RAYQUAZA              36
+#define FLDEFFOBJ_FLYING_TAXI           37
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003

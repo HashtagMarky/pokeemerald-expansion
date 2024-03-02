@@ -2017,7 +2017,7 @@ static void CB_ExitFlyMap(void)
             }
             else
             {
-                if (VarGet(VAR_0x800A) == LAST_TALKED_TO_FLYING_TAXI)
+                if (VarGet(VAR_FLYING_TAXI) == FLYING_TAXI_IN_USE)
                     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
                 else
                     SetMainCallback2(CB2_ReturnToPartyMenuFromFlyMap);
