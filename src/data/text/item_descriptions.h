@@ -3993,3 +3993,9 @@ static const u8 sGlimmeringCharmDesc[] = _(
     "A charm that will\n"
     "raise the shards\n"
     "from Tera Raids.");
+
+static const u8 sPSSLaptopBookDesc[] = _(
+    "A portable solution\n"
+    "to access the {PKMN}\n"
+    "Storage System.");
+    

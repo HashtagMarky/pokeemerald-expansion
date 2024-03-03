@@ -80,6 +80,8 @@ static void ItemUseOnFieldCB_Honey(u8 taskId);
 static bool32 IsValidLocationForVsSeeker(void);
 static bool32 CannotUseBagBattleItem(u16 itemId);
 
+static void ItemUseOnFieldCB_PSSLaptop(u8 taskId);
+
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -1445,6 +1447,37 @@ void FieldUseFunc_VsSeeker(u8 taskId)
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
 {
     Task_CloseCantUseKeyItemMessage(taskId);
+}
+
+extern const u8 EventScript_PSSLaptop[];
+
+void ItemUseOutOfBattle_PSSLaptop(u8 taskId)
+{
+    if (1 == 1) // Add conditions for use here
+    {
+        if (!gTasks[taskId].tUsingRegisteredKeyItem)
+        {
+            sItemUseOnFieldCB = ItemUseOnFieldCB_PSSLaptop;
+            gFieldCallback = FieldCB_UseItemOnField;
+            gBagMenu->newScreenCallback = CB2_ReturnToField;
+            Task_FadeAndCloseBagMenu(taskId);
+        } else {
+            sItemUseOnFieldCB = ItemUseOnFieldCB_PSSLaptop;
+            SetUpItemUseOnFieldCallback(taskId);
+        }
+    } else {
+        if (!InBattlePyramid())
+                DisplayItemMessage(taskId, FONT_NORMAL, gText_DadsAdvice, CloseItemMessage);
+            else
+                DisplayItemMessageInBattlePyramid(taskId, gText_DadsAdvice, Task_CloseBattlePyramidBagMessage);
+    }
+}
+
+static void ItemUseOnFieldCB_PSSLaptop(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_PSSLaptop);
+    DestroyTask(taskId);
 }
 
 #undef tUsingRegisteredKeyItem

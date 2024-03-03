@@ -54,4 +54,6 @@ enum {
 
 bool32 CanThrowBall(void);
 
+void ItemUseOutOfBattle_PSSLaptop(u8);
+
 #endif // GUARD_ITEM_USE_H

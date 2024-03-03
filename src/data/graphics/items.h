@@ -2058,3 +2058,6 @@ const u32 gItemIconPalette_BerserkGene[] = INCBIN_U32("graphics/items/icon_palet
 
 const u32 gItemIcon_FairyFeather[] = INCBIN_U32("graphics/items/icons/fairy_feather.4bpp.lz");
 const u32 gItemIconPalette_FairyFeather[] = INCBIN_U32("graphics/items/icon_palettes/fairy_feather.gbapal.lz");
+
+const u32 gItemIcon_PSSLaptop[] = INCBIN_U32("graphics/items/icons/laptop.4bpp.lz");
+const u32 gItemIconPalette_PSSLaptop[] = INCBIN_U32("graphics/items/icon_palettes/laptop.gbapal.lz");

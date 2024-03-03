@@ -9814,4 +9814,14 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+    [ITEM_PSS_LAPTOP] =
+    {
+        .name = _("PSS LAPTOP"),
+        .price = 0,
+        .importance = 1,
+        .description = sPSSLaptopBookDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PSSLaptop,
+    },
 };
